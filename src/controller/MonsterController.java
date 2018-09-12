@@ -36,7 +36,7 @@ public class MonsterController
 
 		System.out.println("How many legs does it have?");
 		response = inputMonster.next();
-		while (validDouble(response))
+		while (!validDouble(response))
 		{
 			inputMonster.nextLine();
 			response = inputMonster.next();
@@ -47,7 +47,7 @@ public class MonsterController
 		
 		System.out.println("How many eyes does it have?");
 		response = inputMonster.next();
-		while (validInt(response))
+		while (!validInt(response))
 		{
 			inputMonster.nextLine();
 			response = inputMonster.next();
@@ -86,7 +86,7 @@ public class MonsterController
 		
 		System.out.println("How many arms does it have?");
 		response = inputMonster.next();
-		while (validInt(response))
+		while (!validInt(response))
 		{
 			inputMonster.nextLine();
 			response = inputMonster.next();
@@ -108,9 +108,11 @@ public class MonsterController
 
 	public boolean validInt(String sample)
 	{
+		//Declares and initializes a boolean variable to false
 		boolean isValid = false;
 		try
 		{
+			//tries to convert the text to an in
 			Integer.parseInt(sample);
 			isValid = true;
 
