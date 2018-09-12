@@ -15,6 +15,6 @@ public class MonsterController
 	}
 	public void start()
 	{
-		System.out.println(myMonster);
+		System.out.println(myMonster.getCatchphrase());
 	}
 }

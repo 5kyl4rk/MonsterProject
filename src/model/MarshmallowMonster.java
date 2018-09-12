@@ -31,18 +31,82 @@ public class MarshmallowMonster
 		this.catchphrase = catchphrase;
 	}
 
+	public String getName()
+	{
+		return name;
+	}
+
+	public double getLegCount()
+	{
+		return legCount;
+	}
+
+	public int getEyeCount()
+	{
+		return eyeCount;
+	}
+
+	public boolean getHasNose()
+	{
+		return hasNoses;
+	}
+
+	public int getArmCount()
+	{
+		return armCount;
+	}
+
+	public String getCatchphrase()
+	{
+		return catchphrase;
+	}
+
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public void setLegCount(double legCount)
+	{
+		this.legCount = legCount;
+	}
+
+	public void setEyeCount(int eyeCount)
+	{
+		this.eyeCount = eyeCount;
+	}
+
+	public void setHasNose(boolean hasNoses)
+	{
+		this.hasNoses = hasNoses;
+	}
+	
+	public void setArmCount(int armCount)
+	{
+		this.armCount = armCount;
+	}
+	
+	public void setCatchphrase(String catchphrase)
+	{
+		this.catchphrase = catchphrase;
+	}
+	
+
 	public String toString()
 	{
 		String nose = "";
 		if (hasNoses)
 		{
-			nose ="a nose";
-		} else {
+			nose = "a nose";
+		}
+		else
+		{
 			nose = "no nose";
 		}
 		String description = "This Monster is named " + name + " and it has " + legCount + " legs, " + eyeCount + " eyes, " + armCount + " arms " + "and it has " + nose
-				+".  It's favorite thing to say is: " + "\"" + catchphrase + "\"";
+				+ ".  It's favorite thing to say is: " + "\"" + catchphrase + "\"";
 
 		return description;
 	}
+
 }
