@@ -31,8 +31,7 @@ public class MonsterController
 		System.out.println("What is the name of your monster?");
 		String response = inputMonster.nextLine();
 		userMonster.setName(response);
-		System.out.println("Your monster's name is " + userMonster.getName()/* +"?" */);
-		// add in validation maybe?
+		System.out.println("Your monster's name is " + userMonster.getName());
 
 		System.out.println("How many legs does it have?");
 		response = inputMonster.next();
