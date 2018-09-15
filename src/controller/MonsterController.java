@@ -34,17 +34,8 @@ public class MonsterController
 
 	private void setUpMonster()
 	{
-<<<<<<< HEAD
-		System.out.println("What is the name of your monster?");
-		String response = inputMonster.nextLine();
-		userMonster.setName(response);
-		System.out.println("Your monster's name is " + userMonster.getName());
-
-		System.out.println("How many legs does it have?");
-		response = inputMonster.next();
-		while (!validDouble(response))
-=======
 		//---comment out sections are for console based responses---
+		//System.out.println("What is the name of your monster?");
 		String inputResponse = JOptionPane.showInputDialog(null, "What is the name of your monster?");
 		//String inputResponse = inputMonster.nextLine();
 		userMonster.setName(inputResponse);
@@ -52,10 +43,11 @@ public class MonsterController
 		JOptionPane.showMessageDialog(null, "Your monster's name is " + userMonster.getName());
 		
 		
+		//System.out.println("How many legs does it have?");
 		inputResponse = JOptionPane.showInputDialog(null, "How many legs does it have?");
-		//response = inputMonster.next();
+		//inputResponse = inputMonster.next();
 		while (!validDouble(inputResponse))
->>>>>>> 2e8f4a6b89b913f375e657f6b4020bd80fd14e12
+
 		{
 			//inputMonster.nextLine();
 			//inputResponse.next();
