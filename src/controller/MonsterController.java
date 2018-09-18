@@ -70,17 +70,19 @@ public class MonsterController
 				userMonster.setHasNose(true);
 				valid = true;
 				JOptionPane.showMessageDialog(null,"Your monster has a nose");
-				JOptionPane.showMessageDialog(null, "I guess he can never stop and smell the roses then");
+				
 			}
 			else if (inputResponse.toLowerCase().equals("no") || inputResponse.toLowerCase().equals("false"))
 			{
 				userMonster.setHasNose(false);
 				valid = true;
 				JOptionPane.showMessageDialog(null,"Your monster has no nose");
+				JOptionPane.showMessageDialog(null, "I guess he can never stop and smell the roses then");
 			}
 			else
 			{
 				JOptionPane.showMessageDialog(null,"Please type either yes/no or true/false");
+				inputResponse = JOptionPane.showInputDialog(null, "Does your monster have a nose?");
 			}
 		}
 
@@ -96,6 +98,19 @@ public class MonsterController
 		
 		inputResponse = JOptionPane.showInputDialog(null,"Finally, what is your monster's favorite thing to say?");
 		userMonster.setCatchphrase(inputResponse);
+		if(userMonster.getCatchphrase().toLowerCase().equals("gotta go fast"))
+		{
+			JOptionPane.showMessageDialog(null, "Gotta go fast");
+			JOptionPane.showMessageDialog(null, "Gotta go fast!");
+			JOptionPane.showMessageDialog(null, "Gotta go faster");
+			JOptionPane.showMessageDialog(null, "Faster!");
+			JOptionPane.showMessageDialog(null, "FASTER!");
+			JOptionPane.showMessageDialog(null, "FASTER!!!");
+			
+		} else if(userMonster.getCatchphrase().toLowerCase().equals("owo"))
+		{
+			userMonster.setCatchphrase("I'm a lonely depressed man who spends his time on internet chat rooms and is sexual attracted to anthropromorphic animals");
+		}
 
 		JOptionPane.showMessageDialog(null, userMonster);
 		
