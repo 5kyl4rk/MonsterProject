@@ -34,99 +34,164 @@ public class MonsterController
 
 	private void setUpMonster()
 	{
-		//---comment out sections are for console based responses---
-		//System.out.println("What is the name of your monster?");
+		
 		String inputResponse = JOptionPane.showInputDialog(null, "What is the name of your monster?");
-		//String inputResponse = inputMonster.nextLine();
 		userMonster.setName(inputResponse);
-		//System.out.println("Your monster's name is " + userMonster.getName());
 		JOptionPane.showMessageDialog(null, "Your monster's name is " + userMonster.getName());
 		
-		
-		//System.out.println("How many legs does it have?");
-		inputResponse = JOptionPane.showInputDialog(null, "How many legs does it have?");
-		//inputResponse = inputMonster.next();
-		while (!validDouble(inputResponse))
 
+		inputResponse = JOptionPane.showInputDialog(null, "How many legs does it have?");
+		while (!validDouble(inputResponse))
 		{
-			//inputMonster.nextLine();
-			//inputResponse.next();
 			inputResponse = JOptionPane.showInputDialog(null, "How many legs does it have?");
 		}
+		
 		userMonster.setLegCount(Double.parseDouble(inputResponse));
-		//System.out.println("Your monster has " + userMonster.getLegCount() =" legs");
 		JOptionPane.showMessageDialog(null, "Your monster has " + userMonster.getLegCount() +" legs");
 
-		//System.out.println("How many eyes does it have?");
+		
 		inputResponse = JOptionPane.showInputDialog(null, "How many eyes does it have?");
-		//inputResponse = inputMonster.next();
 		while (!validInt(inputResponse))
 		{
-			//inputMonster.nextLine();
-			//inputResponse = inputMonster.next();
 			inputResponse = JOptionPane.showInputDialog(null, "How many eyes does it have?");
 		}
 
-		
 		userMonster.setEyeCount(Integer.parseInt(inputResponse));
-		//System.out.println("Your monster has " + userMonster.getEyeCount() + " eyes");
 		JOptionPane.showMessageDialog(null,"Your monster has " + userMonster.getEyeCount() + " eyes");
 
-		//inputMonster.nextLine();
 
-		//System.out.println("Does your monster have a nose?");
 		inputResponse = JOptionPane.showInputDialog(null, "Does your monster have a nose?");
-		//Converts response into true/false by seeing if the reply is yes or no
 		boolean valid = false;
+		//Converts response into true/false by seeing if the reply is yes or no
 		while (!valid)
 		{
-			//inputResponse = inputMonster.nextLine();
 			if (inputResponse.toLowerCase().equals("yes") || inputResponse.toLowerCase().equals("true"))
 			{
 				userMonster.setHasNose(true);
 				valid = true;
-				//System.out.println("Your monster has a nose");
 				JOptionPane.showMessageDialog(null,"Your monster has a nose");
+				JOptionPane.showMessageDialog(null, "I guess he can never stop and smell the roses then");
 			}
 			else if (inputResponse.toLowerCase().equals("no") || inputResponse.toLowerCase().equals("false"))
 			{
 				userMonster.setHasNose(false);
 				valid = true;
-				//System.out.println("Your monster has no nose");
 				JOptionPane.showMessageDialog(null,"Your monster has no nose");
 			}
 			else
 			{
-				//System.out.println("Please type either yes/no or true/false");
 				JOptionPane.showMessageDialog(null,"Please type either yes/no or true/false");
 			}
 		}
 
-		
-		//System.out.println("How many arms does it have?");
+	
 		inputResponse = JOptionPane.showInputDialog(null, "How many arms does it have?");
-		//inpuResponse = inputMonster.next();
 		while (!validInt(inputResponse))
 		{
-			//inputMonster.nextLine();
-			//inpuResponse = inputMonster.next();
 			inputResponse = JOptionPane.showInputDialog(null,"How many arms does it have?");
 		}
 		userMonster.setArmCount(Integer.parseInt(inputResponse));
-		//System.out.println("Your monster has " + userMonster.getArmCount() + " arms");
 		JOptionPane.showMessageDialog(null,"Your monster has " + userMonster.getArmCount() + " arms");
 
 		
-		//inputMonster.nextLine();
-
-		//System.out.println("Finally, what is your monster's favorite thing to say?");
 		inputResponse = JOptionPane.showInputDialog(null,"Finally, what is your monster's favorite thing to say?");
-		//inputResponse = inputMonster.nextLine();
 		userMonster.setCatchphrase(inputResponse);
-		
 
-		//System.out.println(userMonster);
 		JOptionPane.showMessageDialog(null, userMonster);
+		
+		
+		//---comment out sections are for console based responses---
+			/*
+			System.out.println("What is the name of your monster?");
+			String inputResponse = inputMonster.nextLine();
+			userMonster.setName(inputResponse);
+			
+			System.out.println("Your monster's name is " + userMonster.getName());
+				
+				
+			System.out.println("How many legs does it have?");
+				
+			inputResponse = inputMonster.next();
+			while (!validDouble(inputResponse))
+				{
+					inputMonster.nextLine();
+					inputResponse.next();
+					
+				}
+			userMonster.setLegCount(Double.parseDouble(inputResponse));
+			System.out.println("Your monster has " + userMonster.getLegCount() =" legs");
+				
+			System.out.println("How many eyes does it have?");
+				
+			inputResponse = inputMonster.next();
+			while (!validInt(inputResponse))
+				{
+					inputMonster.nextLine();
+					inputResponse = inputMonster.next();
+					
+				}
+
+				
+			userMonster.setEyeCount(Integer.parseInt(inputResponse));
+			System.out.println("Your monster has " + userMonster.getEyeCount() + " eyes");
+				
+
+			inputMonster.nextLine();
+
+			System.out.println("Does your monster have a nose?");
+				
+			//Converts response into true/false by seeing if the reply is yes or no
+			boolean valid = false;
+			while (!valid)
+				{
+				inputResponse = inputMonster.nextLine();
+				if (inputResponse.toLowerCase().equals("yes") || inputResponse.toLowerCase().equals("true"))
+				{
+					userMonster.setHasNose(true);
+					valid = true;
+					System.out.println("Your monster has a nose");
+						
+				}
+				else if (inputResponse.toLowerCase().equals("no") || inputResponse.toLowerCase().equals("false"))
+				{
+					userMonster.setHasNose(false);
+					valid = true;
+					System.out.println("Your monster has no nose");
+						
+				}
+				else
+				{
+					System.out.println("Please type either yes/no or true/false");
+						
+				}
+			}
+
+				
+			System.out.println("How many arms does it have?");
+				
+			inpuResponse = inputMonster.next();
+			while (!validInt(inputResponse))
+				{
+					inputMonster.nextLine();
+					inpuResponse = inputMonster.next();
+					
+				}
+			userMonster.setArmCount(Integer.parseInt(inputResponse));
+			System.out.println("Your monster has " + userMonster.getArmCount() + " arms");
+				
+
+				
+			inputMonster.nextLine();
+
+			System.out.println("Finally, what is your monster's favorite thing to say?");
+			inputResponse = inputMonster.nextLine();
+			userMonster.setCatchphrase(inputResponse);
+				
+
+			System.out.println(userMonster);
+			*/		
+		
+		
 
 	}
 
