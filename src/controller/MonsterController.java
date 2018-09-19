@@ -34,7 +34,7 @@ public class MonsterController
 
 	private void setUpMonster()
 	{
-		
+		boolean isSpider = false;
 		String inputResponse = JOptionPane.showInputDialog(null, "What is the name of your monster?");
 		userMonster.setName(inputResponse);
 		JOptionPane.showMessageDialog(null, "Your monster's name is " + userMonster.getName());
@@ -47,6 +47,10 @@ public class MonsterController
 		}
 		
 		userMonster.setLegCount(Double.parseDouble(inputResponse));
+		if(userMonster.getLegCount() == 4)
+		{
+			isSpider = true;
+		}
 		JOptionPane.showMessageDialog(null, "Your monster has " + userMonster.getLegCount() +" legs");
 
 		
@@ -55,8 +59,12 @@ public class MonsterController
 		{
 			inputResponse = JOptionPane.showInputDialog(null, "How many eyes does it have?");
 		}
-
+		
 		userMonster.setEyeCount(Integer.parseInt(inputResponse));
+		if(userMonster.getEyeCount() != 8)
+		{
+			isSpider = false;
+		}
 		JOptionPane.showMessageDialog(null,"Your monster has " + userMonster.getEyeCount() + " eyes");
 
 
@@ -70,6 +78,7 @@ public class MonsterController
 				userMonster.setHasNose(true);
 				valid = true;
 				JOptionPane.showMessageDialog(null,"Your monster has a nose");
+				isSpider = false;
 				
 			}
 			else if (inputResponse.toLowerCase().equals("no") || inputResponse.toLowerCase().equals("false"))
@@ -93,6 +102,10 @@ public class MonsterController
 			inputResponse = JOptionPane.showInputDialog(null,"How many arms does it have?");
 		}
 		userMonster.setArmCount(Integer.parseInt(inputResponse));
+		if(userMonster.getArmCount() != 4) 
+		{
+			isSpider = false;
+		}
 		JOptionPane.showMessageDialog(null,"Your monster has " + userMonster.getArmCount() + " arms");
 
 		
@@ -111,8 +124,16 @@ public class MonsterController
 		{
 			userMonster.setCatchphrase("I'm a lonely depressed man who spends his time on internet chat rooms and is sexual attracted to anthropromorphic animals");
 		}
-
-		JOptionPane.showMessageDialog(null, userMonster);
+		if(isSpider) {
+			JOptionPane.showMessageDialog(null,"Your monster is literally just a spider");
+			JOptionPane.showMessageDialog(null,"  / _ \\\n" + 
+					" \\_\\(_)/_/\n" + 
+					" _//\"\\\\_\n" + 
+					"   /   \\");
+		} else
+		{
+			JOptionPane.showMessageDialog(null, userMonster);
+		}	
 		
 		
 		//---comment out sections are for console based responses---
